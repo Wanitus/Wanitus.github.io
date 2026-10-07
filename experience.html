@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ประวัติการทำงานและผลงาน - Wanitus Kudchabootr</title>
+  <title>ประวัติการทำงาน - Wanitus Kudchabootr | Senior Data Engineer</title>
   <!-- Google Fonts: Prompt & Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +48,7 @@
 
     .container {
       position: relative;
-      max-width: 800px;
+      max-width: 840px;
       width: 100%;
       background: var(--card-bg);
       backdrop-filter: blur(24px);
@@ -145,7 +145,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .section-title::before {
@@ -162,10 +162,10 @@
       position: relative;
       border-left: 2px solid rgba(255, 255, 255, 0.1);
       margin-left: 12px;
-      padding-left: 24px;
+      padding-left: 26px;
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 26px;
     }
 
     .timeline-card {
@@ -178,7 +178,7 @@
     }
 
     .timeline-card:hover {
-      border-color: rgba(0, 245, 255, 0.3);
+      border-color: rgba(0, 245, 255, 0.35);
       background: rgba(0, 245, 255, 0.03);
       transform: translateY(-2px);
       box-shadow: 0 10px 25px -10px rgba(0, 245, 255, 0.2);
@@ -186,7 +186,7 @@
 
     .timeline-dot {
       position: absolute;
-      left: -32px;
+      left: -34px;
       top: 24px;
       width: 14px;
       height: 14px;
@@ -206,11 +206,21 @@
       box-shadow: 0 0 10px var(--neon-purple);
     }
 
+    .timeline-dot.emerald {
+      border-color: var(--neon-emerald);
+      box-shadow: 0 0 10px var(--neon-emerald);
+    }
+
+    .timeline-dot.gold {
+      border-color: #fbbf24;
+      box-shadow: 0 0 10px #fbbf24;
+    }
+
     .card-header-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       flex-wrap: wrap;
       gap: 8px;
     }
@@ -224,7 +234,7 @@
     .job-period {
       font-size: 0.82rem;
       font-family: 'Space Grotesk', sans-serif;
-      padding: 3px 10px;
+      padding: 3px 12px;
       border-radius: 12px;
       background: rgba(0, 245, 255, 0.12);
       border: 1px solid rgba(0, 245, 255, 0.3);
@@ -233,8 +243,8 @@
 
     .company-name {
       color: #c084fc;
-      font-size: 0.95rem;
-      font-weight: 500;
+      font-size: 0.98rem;
+      font-weight: 600;
       margin-bottom: 12px;
       display: flex;
       align-items: center;
@@ -272,64 +282,28 @@
       color: #e2e8f0;
     }
 
-    /* Projects Grid */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .project-card {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 16px;
-      padding: 20px;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .project-card:hover {
-      border-color: rgba(255, 0, 127, 0.35);
-      background: rgba(255, 0, 127, 0.03);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px -10px rgba(255, 0, 127, 0.2);
-    }
-
-    .project-name {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .project-desc {
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
-
     /* Education Box */
     .edu-card {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 16px;
       padding: 20px 24px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 10px;
+      transition: all 0.3s ease;
     }
 
-    .edu-title {
-      font-size: 1rem;
+    .edu-card:hover {
+      border-color: rgba(0, 245, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .edu-degree {
+      font-size: 1.05rem;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 4px;
@@ -337,15 +311,15 @@
 
     .edu-inst {
       color: var(--neon-cyan);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
     }
 
     .edu-year {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-family: 'Space Grotesk', sans-serif;
       color: var(--text-muted);
       background: rgba(255, 255, 255, 0.04);
-      padding: 4px 12px;
+      padding: 4px 14px;
       border-radius: 12px;
     }
 
@@ -413,9 +387,6 @@
       h1 {
         font-size: 1.7rem;
       }
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
       .cta-container {
         flex-direction: column;
       }
@@ -434,149 +405,137 @@
 
     <!-- Header -->
     <header class="page-header">
-      <h1>ประวัติการทำงาน & ผลงาน</h1>
+      <h1>ประวัติการทำงาน (Work Experience)</h1>
       <p class="page-subtitle">
-        เส้นทางสายอาชีพและประสบการณ์การพัฒนาระบบข้อมูล (Data Engineering), ระบบ Big Data และ Automation
+        เส้นทางสายอาชีพและประวัติการทำงานจริงในองค์กรชั้นนำด้าน Big Data, Telecom, การเงิน และ Enterprise Solutions
       </p>
     </header>
 
-    <!-- Experience Timeline Section -->
+    <!-- Work Experience Timeline Section -->
     <section>
-      <h2 class="section-title">ประสบการณ์การทำงาน (Work Experience)</h2>
+      <h2 class="section-title">ลำดับประวัติการทำงาน (Employment History)</h2>
       <div class="timeline">
         
-        <!-- Job 1 -->
+        <!-- 1. CANA ENTERPRISE / True Corporation -->
         <div class="timeline-card">
           <div class="timeline-dot"></div>
           <div class="card-header-row">
-            <div class="job-title">Senior Data Engineer</div>
-            <div class="job-period">ปัจจุบัน (Present)</div>
+            <div class="job-title">Senior Data Engineer / Data Management Specialist</div>
+            <div class="job-period">เม.ย. 2024 – ปัจจุบัน (Apr 2024 – Present)</div>
           </div>
-          <div class="company-name">🏢 CANA ENTERPRISE CO.,LTD.</div>
+          <div class="company-name">🏢 CANA ENTERPRISE CO.,LTD. (Onsite at True Corporation Public Co., Ltd.)</div>
           <div class="job-desc">
             <ul>
-              <li>ออกแบบและพัฒนาระบบสถาปัตยกรรมข้อมูลขนาดใหญ่ (Big Data Architecture) และระบบ Distributed Computing ด้วย <strong>Apache Hadoop</strong></li>
-              <li>สร้างและดูแล Automated ETL Data Pipeline ระดับองค์กรด้วย <strong>Apache Airflow</strong> และ <strong>Python</strong> เพื่อให้การไหลเวียนข้อมูลเป็นไปอย่างต่อเนื่องและแม่นยำ</li>
-              <li>เชื่อมต่อและจัดเก็บข้อมูลบนคลาวด์ <strong>AWS (S3)</strong> พร้อมพัฒนาระบบ Query ข้อมูลเชิงวิเคราะห์ด้วย <strong>SQL</strong> สำหรับรองรับการใช้งานทางธุรกิจ</li>
-              <li>ตรวจสอบ Process Logs, ตรวจจับความผิดปกติของข้อมูล (Data Quality Checks) และปรับแต่งประสิทธิภาพ (Performance Optimization) ของ Pipeline ระบบขนาดใหญ่</li>
+              <li>ดูแลและบริหารจัดการระบบข้อมูลขนาดใหญ่ (Big Data Infrastructure) และแก้ไขปัญหาในระบบ Production ระดับ Enterprise ได้อย่างรวดเร็วและมีประสิทธิภาพ</li>
+              <li>สร้างระบบจัดการตารางงานอัตโนมัติ (Automate Job Scheduling) ด้วย <strong>Kubernetes, Docker, Apache Airflow และ Python</strong></li>
+              <li>พัฒนาเครื่องมือและแดชบอร์ดช่วยเพิ่มประสิทธิภาพการมองเห็นข้อมูล (Data Visibility & Data Lake Monitoring)</li>
+              <li>บริหารจัดการคลังข้อมูลและการเชื่อมโยงข้อมูล Data Inventory พร้อมควบคุมระบบฐานข้อมูล <strong>Vertica, Apache Hadoop, Hive และ AWS S3</strong></li>
             </ul>
           </div>
           <div class="tech-pill-list">
             <span class="tech-pill">Apache Airflow</span>
-            <span class="tech-pill">Apache Hadoop</span>
+            <span class="tech-pill">Hadoop & Hive</span>
+            <span class="tech-pill">Vertica</span>
             <span class="tech-pill">Python</span>
-            <span class="tech-pill">SQL</span>
+            <span class="tech-pill">Docker & Kubernetes</span>
             <span class="tech-pill">AWS S3</span>
-            <span class="tech-pill">ETL Architecture</span>
+            <span class="tech-pill">SQL</span>
           </div>
         </div>
 
-        <!-- Job 2 -->
+        <!-- 2. True Digital Group -->
         <div class="timeline-card">
           <div class="timeline-dot pink"></div>
           <div class="card-header-row">
-            <div class="job-title">Data & System Specialist</div>
-            <div class="job-period">ประสบการณ์สายงาน Telecom & Enterprise</div>
+            <div class="job-title">Engineer Specialist</div>
+            <div class="job-period">ธ.ค. 2019 – มี.ค. 2024 (Dec 2019 – Mar 2024)</div>
           </div>
-          <div class="company-name">🏢 Telecommunications & Enterprise Systems</div>
+          <div class="company-name">🏢 True Digital Group (ทรู ดิจิทัล กรุ๊ป)</div>
           <div class="job-desc">
             <ul>
-              <li>จัดการและวิเคราะห์ข้อมูลเชิงลึกในระบบโทรคมนาคมและบริการดิจิทัลขนาดใหญ่ (เช่น True Corporation)</li>
-              <li>พัฒนาระบบอัตโนมัติสำหรับ Daily Process Reports, การตรวจสอบข้อผิดพลาด (Process Investigation) และการสรุปผลข้อมูลประจำวัน</li>
-              <li>ดูแลระบบฐานข้อมูลและประสิทธิภาพของ Transaction Logs ในระดับ High-Availability</li>
+              <li>พัฒนาระบบสร้างรายงานและสกัดข้อมูลอัตโนมัติ (Automated Reporting) สำหรับโปรเจกต์ Vending Machine, KE และ EDCP ด้วย <strong>Python & RESTful API</strong></li>
+              <li>ตั้งค่าและบริหารจัดการระบบ Robocore Project โดยเชื่อมต่อกับ <strong>DialogFlow และ API Services</strong></li>
+              <li>บริหารจัดการระบบคลาวด์แพลตฟอร์ม (Google Cloud Platform / AWS) และระบบ Zendesk สำหรับ Enterprise</li>
+              <li>ออกแบบโครงสร้างการตั้งค่าระบบสำหรับ Digital Guest Solutions พร้อมให้คำปรึกษาด้านการวิเคราะห์ข้อมูลและบริการหลังการขาย</li>
             </ul>
           </div>
           <div class="tech-pill-list">
-            <span class="tech-pill">Database Management</span>
-            <span class="tech-pill">Process Investigation</span>
-            <span class="tech-pill">SQL</span>
-            <span class="tech-pill">Automation Scripts</span>
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">RESTful API</span>
+            <span class="tech-pill">GCP & AWS</span>
+            <span class="tech-pill">DialogFlow</span>
+            <span class="tech-pill">Automated Reporting</span>
           </div>
         </div>
 
-        <!-- Job 3 -->
+        <!-- 3. V-Smart Co., Ltd. -->
         <div class="timeline-card">
           <div class="timeline-dot purple"></div>
           <div class="card-header-row">
-            <div class="job-title">AI & Data Automation Specialist</div>
-            <div class="job-period">Freelance & Consulting</div>
+            <div class="job-title">Senior ETL Developer</div>
+            <div class="job-period">ก.ค. 2016 – พ.ย. 2019 (Jul 2016 – Nov 2019)</div>
           </div>
-          <div class="company-name">⚡ Fastwork Platform & Independent Projects</div>
+          <div class="company-name">🏢 V-Smart Co., Ltd. (วี-สมาร์ท)</div>
           <div class="job-desc">
             <ul>
-              <li>รับสกัดข้อมูล (Web Scraping) ด้วย Python สกัดข้อมูลตามความต้องการเฉพาะ พร้อมตั้งค่าระบบดึงข้อมูลอัตโนมัติส่งออกเป็น Excel / CSV</li>
-              <li>ออกแบบและพัฒนาระบบอัตโนมัติด้วย AI สำหรับองค์กรและธุรกิจ เช่น ระบบคัดกรอง Resume อัตโนมัติ, ระบบติดตามงาน และระบบสร้างรายงานอัตโนมัติ</li>
-              <li>พัฒนาเครื่องมือและโปรแกรมช่วยลดขั้นตอนงาน Manual ซ้ำซ้อน เพิ่มความเร็วและลดข้อผิดพลาดในองค์กร</li>
+              <li>เป็นผู้นำทีมพัฒนา ETL (Lead ETL Development) และถ่ายทอด Best Practices ให้กับทีมงาน</li>
+              <li>ออกแบบและจัดทำเอกสารกระบวนการ ETL, Data Mapping และ System Workflows ขององค์กร</li>
+              <li>พัฒนาสถาปัตยกรรม Business Intelligence (BI Architecture) และกระบวนการควบคุม Batch Management</li>
+              <li>ปรับแต่งประสิทธิภาพของระบบประมวลผลข้อมูล (ETL Performance Tuning) และแก้ไขข้อผิดพลาดของ Pipeline</li>
             </ul>
           </div>
           <div class="tech-pill-list">
-            <span class="tech-pill">Web Scraping</span>
-            <span class="tech-pill">AI Automation</span>
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">Workflow Optimization</span>
+            <span class="tech-pill">ETL Architecture</span>
+            <span class="tech-pill">Data Mapping</span>
+            <span class="tech-pill">Performance Tuning</span>
+            <span class="tech-pill">BI & Data Warehousing</span>
+            <span class="tech-pill">SQL</span>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- Key Projects Highlight -->
-    <section>
-      <h2 class="section-title">ผลงานเด่น & โปรเจกต์ (Key Projects)</h2>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div>
-            <div class="project-name">⚡ Enterprise Airflow ETL Pipeline</div>
-            <p class="project-desc">
-              ระบบ Orchestration สำหรับรัน Batch & Scheduled ETL เชื่อมโยงข้อมูลระหว่าง Hadoop, AWS S3 และ Relational Databases อย่างมีเสถียรภาพ
-            </p>
+        <!-- 4. Extend IT Resource Co., Ltd. -->
+        <div class="timeline-card">
+          <div class="timeline-dot emerald"></div>
+          <div class="card-header-row">
+            <div class="job-title">ETL Developer</div>
+            <div class="job-period">พ.ค. 2012 – ก.ค. 2016 (May 2012 – Jul 2016)</div>
+          </div>
+          <div class="company-name">🏢 Extend IT Resource Co., Ltd. (เอ็กซ์เทนด์ ไอที รีซอร์ส)</div>
+          <div class="job-desc">
+            <ul>
+              <li>พัฒนากระบวนการ ETL ครบวงจร รวมถึง Data Mapping, การสร้าง Workflows และระบบงานอัตโนมัติ</li>
+              <li>ดำเนินการทดสอบระบบ System Integration Testing (SIT/UAT) และเพิ่มประสิทธิภาพความเร็วของ ETL Process</li>
+              <li>จัดทำเอกสารทางเทคนิคของระบบ ETL อย่างละเอียด และดำเนินการทำ Unit Testing ในทุกโมดูล</li>
+            </ul>
           </div>
           <div class="tech-pill-list">
-            <span class="tech-pill">Airflow</span>
-            <span class="tech-pill">Hadoop</span>
-            <span class="tech-pill">Python</span>
+            <span class="tech-pill">ETL Development</span>
+            <span class="tech-pill">SIT & UAT Testing</span>
+            <span class="tech-pill">DataStage / SSIS / ODI</span>
+            <span class="tech-pill">PL/SQL</span>
           </div>
         </div>
 
-        <div class="project-card">
-          <div>
-            <div class="project-name">🤖 RAG & AI Pipeline Demo</div>
-            <p class="project-desc">
-              ระบบ AI ค้นคืนข้อมูลเอกสาร (Retrieval-Augmented Generation) และสร้างคำตอบอัจฉริยะด้วย LLM ช่วยเพิ่มประสิทธิภาพในการสืบค้นข้อมูล
-            </p>
+        <!-- 5. Bank of Ayudhya Public Co., Ltd. (Krungsri) -->
+        <div class="timeline-card">
+          <div class="timeline-dot gold"></div>
+          <div class="card-header-row">
+            <div class="job-title">Computer Officer</div>
+            <div class="job-period">ก.ค. 2006 – เม.ย. 2012 (Jul 2006 – Apr 2012)</div>
+          </div>
+          <div class="company-name">🏢 Bank of Ayudhya Public Co., Ltd. (ธนาคารกรุงศรีอยุธยา จำกัด (มหาชน))</div>
+          <div class="job-desc">
+            <ul>
+              <li>บริหารจัดการกระบวนการทำงาน Workflow Processes และจัดทำเอกสารระบบทางเทคนิคของธนาคาร</li>
+              <li>ตรวจสอบและเฝ้าระวังประสิทธิภาพการทำงานของระบบฮาร์ดแวร์และการประมวลผลข้อมูล Batch Processing ในสภาพแวดล้อม Mainframe</li>
+              <li>ดูแลความถูกต้องและเสถียรภาพของการประมวลผลข้อมูลธุรกรรมระดับสถาบันการเงิน</li>
+            </ul>
           </div>
           <div class="tech-pill-list">
-            <span class="tech-pill">LLM</span>
-            <span class="tech-pill">RAG</span>
-            <span class="tech-pill">Python</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <div class="project-name">🕷️ Web Scraping & Data Extraction Suite</div>
-            <p class="project-desc">
-              ชุดเครื่องมือสกัดข้อมูลเว็บอัตโนมัติ พร้อมเทคนิคข้ามผ่านข้อจำกัด Anti-Bot และระบบจัดเก็บข้อมูลลงฐานข้อมูลโดยตรง
-            </p>
-          </div>
-          <div class="tech-pill-list">
-            <span class="tech-pill">Scraping</span>
-            <span class="tech-pill">Data Pipeline</span>
-            <span class="tech-pill">Python</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <div class="project-name">📄 Document Converter & Automation App</div>
-            <p class="project-desc">
-              แอปพลิเคชันแปลงและจัดการเอกสารอัตโนมัติ (PDF to Word) ช่วยลดขั้นตอนการทำงานและประมวลผลไฟล์อย่างรวดเร็ว
-            </p>
-          </div>
-          <div class="tech-pill-list">
-            <span class="tech-pill">Desktop App</span>
-            <span class="tech-pill">Automation</span>
+            <span class="tech-pill">Mainframe Operations</span>
+            <span class="tech-pill">Batch Processing</span>
+            <span class="tech-pill">System Monitoring</span>
+            <span class="tech-pill">Banking Systems</span>
           </div>
         </div>
 
@@ -589,18 +548,18 @@
       
       <div class="edu-card">
         <div>
-          <div class="edu-title">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (KMUTT)</div>
-          <div class="edu-inst">King Mongkut's University of Technology Thonburi</div>
+          <div class="edu-degree">Master of Science in Information Technology (M.Sc. IT)</div>
+          <div class="edu-inst">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (King Mongkut's University of Technology Thonburi - KMUTT)</div>
         </div>
-        <div class="edu-year">2013 - 2015</div>
+        <div class="edu-year">2013 – 2015</div>
       </div>
 
       <div class="edu-card">
         <div>
-          <div class="edu-title">ปริญญาตรี (Bachelor's Degree)</div>
-          <div class="edu-inst">Engineering / Technology</div>
+          <div class="edu-degree">Bachelor of Science in Computer Technology (B.Sc. Computer Tech)</div>
+          <div class="edu-inst">มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี (Rajamangala University of Technology Thanyaburi - RMUTT)</div>
         </div>
-        <div class="edu-year">2002 - 2006</div>
+        <div class="edu-year">2002 – 2006</div>
       </div>
     </section>
 
