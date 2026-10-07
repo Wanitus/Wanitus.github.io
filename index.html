@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanitus Kudchabootr - Senior Data Engineer | Portfolio</title>
+  <!-- Google Fonts: Prompt & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #070913;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --neon-cyan: #00f5ff;
+      --neon-magenta: #ff007f;
+      --neon-purple: #8b5cf6;
+      --neon-emerald: #10b981;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Prompt', 'Segoe UI', Tahoma, sans-serif;
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 12% 18%, rgba(0, 245, 255, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 88% 12%, rgba(255, 0, 127, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+      overflow-x: hidden;
+    }
+
+    .container {
+      position: relative;
+      max-width: 760px;
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 24px;
+      padding: 48px 40px;
+      border: 1px solid var(--card-border);
+      box-shadow: 
+        0 0 50px -10px rgba(0, 245, 255, 0.18),
+        0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    /* Ambient top glow */
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 15%;
+      right: 15%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--neon-cyan), var(--neon-magenta), transparent);
+      border-radius: 999px;
+    }
+
+    /* Status Badge */
+    .status-badge-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.84rem;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #34d399;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #34d399;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* Profile Header */
+    .profile-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 124px;
+      height: 124px;
+      margin: 0 auto 20px;
+    }
+
+    .avatar-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--neon-cyan), var(--neon-magenta), var(--neon-purple), var(--neon-cyan));
+      filter: blur(4px);
+      animation: spin 6s linear infinite;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .avatar {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #0f172a;
+      border: 3px solid #1e293b;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .avatar-fallback {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(0, 245, 255, 0.6);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(120deg, #ffffff 15%, var(--neon-cyan) 50%, var(--neon-magenta) 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--neon-cyan);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      text-shadow: 0 0 16px rgba(0, 245, 255, 0.3);
+    }
+
+    .company-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      color: #c084fc;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Highlight mini cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 16px 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      background: rgba(0, 245, 255, 0.06);
+      border-color: rgba(0, 245, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px -6px rgba(0, 245, 255, 0.2);
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+
+    .stat-value.cyan { color: var(--neon-cyan); text-shadow: 0 0 12px rgba(0, 245, 255, 0.4); }
+    .stat-value.pink { color: var(--neon-magenta); text-shadow: 0 0 12px rgba(255, 0, 127, 0.4); }
+    .stat-value.purple { color: #c084fc; text-shadow: 0 0 12px rgba(192, 132, 252, 0.4); }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 18px;
+      background: linear-gradient(180deg, var(--neon-cyan), var(--neon-magenta));
+      border-radius: 4px;
+      box-shadow: 0 0 8px var(--neon-cyan);
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 20px 22px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Experience & Education Cards */
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .timeline-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 16px 18px;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      border-color: rgba(0, 245, 255, 0.3);
+      background: rgba(0, 245, 255, 0.03);
+    }
+
+    .timeline-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--neon-cyan);
+      margin-bottom: 6px;
+    }
+
+    .timeline-role {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .timeline-org {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Skills */
+    .skills-category {
+      margin-bottom: 14px;
+    }
+
+    .skills-category-title {
+      font-size: 0.86rem;
+      color: #94a3b8;
+      font-weight: 500;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .skill-tag {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      cursor: default;
+    }
+
+    .skill-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--neon-cyan);
+      box-shadow: 0 0 6px var(--neon-cyan);
+    }
+
+    .skill-tag:hover {
+      background: rgba(0, 245, 255, 0.08);
+      border-color: var(--neon-cyan);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.25);
+    }
+
+    .skill-tag.pink::before {
+      background-color: var(--neon-magenta);
+      box-shadow: 0 0 6px var(--neon-magenta);
+    }
+    .skill-tag.pink:hover {
+      border-color: var(--neon-magenta);
+      background: rgba(255, 0, 127, 0.08);
+      box-shadow: 0 0 15px rgba(255, 0, 127, 0.25);
+    }
+
+    .skill-tag.purple::before {
+      background-color: var(--neon-purple);
+      box-shadow: 0 0 6px var(--neon-purple);
+    }
+    .skill-tag.purple:hover {
+      border-color: var(--neon-purple);
+      background: rgba(139, 92, 246, 0.08);
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.25);
+    }
+
+    .skill-tag.emerald::before {
+      background-color: var(--neon-emerald);
+      box-shadow: 0 0 6px var(--neon-emerald);
+    }
+    .skill-tag.emerald:hover {
+      border-color: var(--neon-emerald);
+      background: rgba(16, 185, 129, 0.08);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+    }
+
+    /* Contact Links */
+    .contact-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      flex: 1;
+      min-width: 160px;
+      text-align: center;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .contact-btn.primary {
+      background: linear-gradient(135deg, #00f5ff 0%, #7928ca 100%);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 20px rgba(0, 245, 255, 0.35);
+    }
+
+    .contact-btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 26px rgba(0, 245, 255, 0.55);
+      filter: brightness(1.1);
+    }
+
+    .contact-btn.secondary {
+      background: rgba(255, 255, 255, 0.03);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .contact-btn.secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--neon-cyan);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 16px rgba(0, 245, 255, 0.25);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 36px;
+      font-size: 0.82rem;
+      color: #64748b;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 20px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 32px 20px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .stats-grid, .timeline-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-links {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="profile-header">
+      <div class="status-badge-container">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Senior Data Engineer & AI Automation
+        </div>
+      </div>
+
+      <div class="avatar-wrapper">
+        <div class="avatar-ring"></div>
+        <div class="avatar">
+          <img src="https://media.licdn.com/dms/image/v2/C5103AQFC4f9t-6vvjw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1584584468999?e=2147483647&v=beta&t=K8_8KrwPsnY3hBwkZWrYb5iDtRGDVO_lY87ZtYHnKAg" 
+               alt="Wanitus Kudchabootr" 
+               onerror="this.style.display='none'; document.getElementById('avatar-text').style.display='block';">
+          <span id="avatar-text" class="avatar-fallback" style="display: none;">WK</span>
+        </div>
+      </div>
+
+      <h1>Wanitus Kudchabootr</h1>
+      <p class="subtitle">Senior Data Engineer</p>
+      <div class="company-pill">
+        🏢 CANA ENTERPRISE CO.,LTD.
+      </div>
+      <p class="tagline">
+        Specializing in Python, Apache Airflow, Hadoop, and High-Performance ETL & Automation Systems
+      </p>
+    </header>
+
+    <!-- Highlight stats cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value cyan">Airflow & Hadoop</div>
+        <div class="stat-label">ETL & Data Pipeline</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value pink">Python & SQL</div>
+        <div class="stat-label">Automation & Scraping</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value purple">KMUTT</div>
+        <div class="stat-label">Alumnus (มจธ. บางมด)</div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section>
+      <h2 class="section-title">เกี่ยวกับฉัน (About Me)</h2>
+      <div class="info-card">
+        สวัสดีครับ! ผมเป็น <strong>Senior Data Engineer</strong> ประจำที่ <strong>CANA ENTERPRISE CO.,LTD.</strong> 
+        มีความเชี่ยวชาญในการออกแบบและพัฒนาระบบสถาปัตยกรรมข้อมูลขนาดใหญ่ (Big Data Architecture), 
+        การสร้าง ETL Pipeline ด้วย <strong>Apache Airflow</strong> และ <strong>Hadoop</strong> 
+        รวมถึงการทำ Data Automation, Web Scraping และ AI Workflow Automation 
+        เพื่อขับเคลื่อนการตัดสินใจและการทำงานขององค์กรอย่างมีประสิทธิภาพสูงสุด
+      </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section>
+      <h2 class="section-title">ประวัติการทำงาน & การศึกษา (Career & Education)</h2>
+      <div class="timeline-grid">
+        <div class="timeline-item">
+          <div class="timeline-badge">Current Position</div>
+          <div class="timeline-role">Senior Data Engineer</div>
+          <div class="timeline-org">CANA ENTERPRISE CO.,LTD.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-badge">Education</div>
+          <div class="timeline-role">Master's / Alumnus</div>
+          <div class="timeline-org">King Mongkut's University of Technology Thonburi (KMUTT)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section>
+      <h2 class="section-title">ทักษะ & ความเชี่ยวชาญ (Core Skills & Tech)</h2>
+      
+      <div class="skills-category">
+        <div class="skills-category-title">Data Engineering & Big Data</div>
+        <ul class="skills-list">
+          <li class="skill-tag">Python (Core & Scripting)</li>
+          <li class="skill-tag">Apache Airflow (Orchestration)</li>
+          <li class="skill-tag">Apache Hadoop & Ecosystem</li>
+          <li class="skill-tag">ETL & Data Pipelines</li>
+          <li class="skill-tag">SQL & Query Optimization</li>
+        </ul>
+      </div>
+
+      <div class="skills-category" style="margin-top: 14px;">
+        <div class="skills-category-title">Infrastructure & Automation</div>
+        <ul class="skills-list">
+          <li class="skill-tag pink">AWS Cloud (S3, Cloud Data)</li>
+          <li class="skill-tag pink">Docker & Containerization</li>
+          <li class="skill-tag purple">Web Scraping & Data Extraction</li>
+          <li class="skill-tag purple">AI Automation & LLM Workflows</li>
+          <li class="skill-tag emerald">Git, GitHub & Sourcetree</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+      <h2 class="section-title">ช่องทางติดต่อ (Connect with Me)</h2>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/wanitus-kudchabootr-10950a135/" target="_blank" rel="noopener noreferrer" class="contact-btn primary">
+          💼 LinkedIn Profile ↗
+        </a>
+        <a href="mailto:wanitus@gmail.com" class="contact-btn secondary">
+          ✉️ wanitus@gmail.com
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-btn secondary">
+          🐙 GitHub ↗
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2026 Wanitus Kudchabootr — Senior Data Engineer | Crafted with Cyber Glow & Modern Tech
+    </footer>
+  </div>
+</body>
+</html>
